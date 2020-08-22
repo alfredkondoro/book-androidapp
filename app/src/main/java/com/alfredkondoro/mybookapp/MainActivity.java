@@ -35,6 +35,27 @@ public class MainActivity extends AppCompatActivity {
         titleList.add(Constants.TITLEC);
         titleList.add(Constants.TITLED);
         titleList.add(Constants.TITLEE);
+        titleList.add(Constants.TITLEF);
+        titleList.add(Constants.TITLEG);
+        titleList.add(Constants.TITLEH);
+        titleList.add(Constants.TITLEI);
+        titleList.add(Constants.TITLEJ);
+        titleList.add(Constants.TITLEK);
+        titleList.add(Constants.TITLEL);
+        titleList.add(Constants.TITLEM);
+        titleList.add(Constants.TITLEN);
+        titleList.add(Constants.TITLEO);
+        titleList.add(Constants.TITLEP);
+        titleList.add(Constants.TITLEQ);
+        titleList.add(Constants.TITLER);
+        titleList.add(Constants.TITLEZ);
+        titleList.add(Constants.TITLET);
+        titleList.add(Constants.TITLEU);
+        titleList.add(Constants.TITLEV);
+        titleList.add(Constants.TITLEW);
+        titleList.add(Constants.TITLEX);
+
+
 
         recyclerView = findViewById(R.id.recyview1);
         recyclerView.setHasFixedSize (true);
