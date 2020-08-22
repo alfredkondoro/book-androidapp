@@ -5,12 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.alfredkondoro.mybookapp.R;
 import com.alfredkondoro.mybookapp.Interface.TitleClickListener;
-
 import java.util.ArrayList;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,14 +25,14 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.MyviewHolder
 
     @NonNull
     @Override
-    public TitleAdapter.MyviewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TitleAdapter.MyviewHolder onCreateViewHolder(@NonNull ViewGroup parent,  int i) {
         View view = LayoutInflater.from (nContex).inflate (R.layout.title_layout,parent,false);
 
         final MyviewHolder holder = new MyviewHolder (view);
         view.setOnClickListener (new View.OnClickListener () {
             @Override
-            public void onClick(View view) {
-                clickListener.onItemClick (holder.getPosition ());
+            public void onClick(View V) {
+                clickListener.onItemClick (V, holder.getPosition ());
             }
         });
         return holder;
@@ -43,7 +40,7 @@ public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.MyviewHolder
 
     @Override
     public void onBindViewHolder(@NonNull TitleAdapter.MyviewHolder holder, int i) {
-        holder.title.setText(titleList.get (i).replace ("_",""));
+        holder.title.setText(titleList.get (i).replace ("_"," "));
     }
 
     @Override

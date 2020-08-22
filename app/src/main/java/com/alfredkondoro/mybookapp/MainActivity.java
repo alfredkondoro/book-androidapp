@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.alfredkondoro.mybookapp.Adapter.TitleAdapter;
@@ -34,15 +36,17 @@ public class MainActivity extends AppCompatActivity {
         titleList.add(Constants.TITLED);
         titleList.add(Constants.TITLEE);
 
-        recyclerView = findViewById (R.id.recyview1);
+        recyclerView = findViewById(R.id.recyview1);
         recyclerView.setHasFixedSize (true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager (nContext, RecyclerView.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager (nContext, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager (layoutManager);
 
         TitleAdapter titleAdapter = new TitleAdapter (nContext, titleList, new TitleClickListener () {
             @Override
-            public void onItemClick(int position) {
-                Toast.makeText (nContext, "Title clicker position" + position,Toast.LENGTH_SHORT).show ();
+            public void onItemClick(View itemView, int position) {
+                Intent detailIntent = new Intent (MainActivity.this, DetailActivity.class);
+                detailIntent.putExtra("titles", titleList.get (position));
+                startActivity(detailIntent);
             }
         });
         recyclerView.setAdapter (titleAdapter);
